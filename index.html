@@ -14,248 +14,190 @@
   <link rel="icon" href="https://iili.io/fMa56hb.md.png">
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root{
-      --bg: #0b0b0b;
-      --bg2:#000;
-      --card:#141414;
-      --text:#ffffff;
-      --muted:#cfcfcf;
-      --gold:#f5c16c;
-      --gold2:#e6a23c;
-      --shadow: rgba(0,0,0,0.6);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    body{
-      font-family:'Poppins', sans-serif;
-      background: var(--bg);
-      color: var(--text);
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0b0b0b;
+      color: #fff;
       line-height: 1.6;
     }
 
-    a{ text-decoration:none; color:inherit; }
-
-    /* =========================
-       GUARDA PAMPA (franja gaucha)
-    ========================= */
-    /* SVG simple (diamantes/zigzag) en dorado, repetible */
-    .guarda{
-      width: 100%;
-      height: 16px;
-      margin: 22px 0;
-      opacity: .95;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='16' viewBox='0 0 120 16'%3E%3Crect width='120' height='16' fill='none'/%3E%3Cg fill='none' stroke='%23F5C16C' stroke-width='2' stroke-linejoin='round'%3E%3Cpath d='M2 8 L12 2 L22 8 L12 14 Z'/%3E%3Cpath d='M22 8 L32 2 L42 8 L32 14 Z'/%3E%3Cpath d='M42 8 L52 2 L62 8 L52 14 Z'/%3E%3Cpath d='M62 8 L72 2 L82 8 L72 14 Z'/%3E%3Cpath d='M82 8 L92 2 L102 8 L92 14 Z'/%3E%3Cpath d='M102 8 L112 2 L118 8 L112 14 Z'/%3E%3C/g%3E%3C/svg%3E");
-      background-repeat: repeat-x;
-      background-size: 120px 16px;
-      background-position: center;
-      filter: drop-shadow(0 0 10px rgba(245,193,108,.25));
+    a {
+      text-decoration: none;
+      color: inherit;
     }
-
-    .guarda--thin{ height: 12px; background-size: 120px 12px; opacity:.9; }
-    .guarda--center{ max-width: 860px; margin-left:auto; margin-right:auto; }
 
     /* HERO */
-    header{
+    header {
       min-height: 100vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      padding: 44px 20px;
-      background: radial-gradient(circle at top, #1a1a1a, var(--bg2));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: radial-gradient(circle at top, #1a1a1a, #000);
     }
 
-    header img{
+    header img {
       max-width: 280px;
-      margin-bottom: 26px;
-      filter: drop-shadow(0 0 28px rgba(0,0,0,.55));
+      margin-bottom: 30px;
     }
 
-    header h1{
-      font-family:'Oswald', sans-serif;
+    header h1 {
+      font-family: 'Oswald', sans-serif;
       font-size: 3rem;
       letter-spacing: 2px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
-    header p{
-      font-size: 1.08rem;
+    header p {
+      font-size: 1.1rem;
       color: #ddd;
-      margin-bottom: 18px;
+      margin-bottom: 30px;
     }
 
-    .hero-sub{
-      color: var(--muted);
-      font-size: .98rem;
-      margin-top: 6px;
-      max-width: 720px;
-    }
-
-    .btn{
-      display:inline-block;
-      background: linear-gradient(135deg, var(--gold), var(--gold2));
-      color:#000;
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #f5c16c, #e6a23c);
+      color: #000;
       padding: 14px 32px;
       border-radius: 40px;
       font-weight: 600;
-      transition: transform .25s ease, box-shadow .25s ease;
-      box-shadow: 0 0 20px rgba(245,193,108,.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 20px rgba(245,193,108,0.4);
     }
-    .btn:hover{
+
+    .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 0 30px rgba(245,193,108,.7);
+      box-shadow: 0 0 30px rgba(245,193,108,0.7);
     }
 
     /* SECTIONS */
-    section{
+    section {
       padding: 70px 20px;
       max-width: 1100px;
       margin: auto;
-      position: relative;
     }
 
-    section h2{
-      font-family:'Oswald', sans-serif;
+    section h2 {
+      font-family: 'Oswald', sans-serif;
       font-size: 2.2rem;
-      text-align:center;
-      margin-bottom: 18px;
-      color: var(--gold);
+      text-align: center;
+      margin-bottom: 40px;
+      color: #f5c16c;
       letter-spacing: 1px;
     }
 
-    /* Guarda debajo del título de sección */
-    .section-guard{
-      margin: 0 auto 34px auto;
-    }
-
     /* SERVICES */
-    .services{
-      display:grid;
+    .services {
+      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 25px;
     }
 
-    .service{
-      background: var(--card);
+    .service {
+      background: #141414;
       padding: 30px 20px;
       border-radius: 15px;
-      text-align:center;
-      box-shadow: 0 0 15px var(--shadow);
-      border: 1px solid rgba(245,193,108,.10);
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
     }
 
-    .service span{
+    .service span {
       font-size: 2rem;
-      display:block;
+      display: block;
       margin-bottom: 15px;
-      filter: drop-shadow(0 0 12px rgba(245,193,108,.12));
     }
 
     /* ABOUT */
-    .about{
-      text-align:center;
-      max-width: 820px;
+    .about {
+      text-align: center;
+      max-width: 800px;
       margin: auto;
       color: #ccc;
       font-size: 1.05rem;
-      background: linear-gradient(180deg, rgba(245,193,108,.06), rgba(0,0,0,0));
-      border: 1px solid rgba(245,193,108,.10);
-      padding: 28px 22px;
-      border-radius: 16px;
-      box-shadow: 0 0 18px rgba(0,0,0,.45);
     }
 
     /* GALLERY */
-    .gallery{
-      display:grid;
+    .gallery {
+      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 15px;
     }
 
-    .gallery div{
-      background: #1d1d1d;
+    .gallery div {
+      background: #222;
       height: 180px;
       border-radius: 12px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#8a8a8a;
-      font-size: .92rem;
-      border: 1px dashed rgba(245,193,108,.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #777;
+      font-size: 0.9rem;
     }
 
     /* LOCATION */
-    .location{
-      text-align:center;
-      color:#ddd;
+    .location {
+      text-align: center;
+      color: #ddd;
       font-size: 1.05rem;
-      background: #101010;
-      border: 1px solid rgba(245,193,108,.10);
-      padding: 26px 20px;
-      border-radius: 16px;
-      box-shadow: 0 0 16px rgba(0,0,0,.55);
     }
 
     /* FOOTER */
-    footer{
-      background:#000;
-      padding: 34px 20px;
-      text-align:center;
-      font-size: .9rem;
-      color:#777;
+    footer {
+      background: #000;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
     }
 
     /* FLOATING IG BUTTON */
-    .ig-float{
+    .ig-float {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: linear-gradient(135deg, var(--gold), var(--gold2));
-      color:#000;
+      background: linear-gradient(135deg, #f5c16c, #e6a23c);
+      color: #000;
       padding: 14px 18px;
       border-radius: 50px;
-      font-weight: 700;
-      box-shadow: 0 0 25px rgba(245,193,108,.7);
+      font-weight: 600;
+      box-shadow: 0 0 25px rgba(245,193,108,0.7);
       z-index: 999;
     }
 
     /* RESPONSIVE */
-    @media (max-width: 600px){
-      header h1{ font-size: 2.3rem; }
-      header img{ max-width: 220px; }
-      .hero-sub{ font-size: .95rem; }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.3rem;
+      }
+      header img {
+        max-width: 220px;
+      }
     }
   </style>
 </head>
-
 <body>
 
   <!-- HERO -->
   <header>
     <img src="https://iili.io/fMa56hb.md.png" alt="SIN NERVIO Logo">
-
     <h1>SIN NERVIO</h1>
     <p>Barbería & Peluquería · Damas y Caballeros</p>
-
-    <!-- Guarda pampa en el hero -->
-    <div class="guarda guarda--center"></div>
-
-    <a class="btn" href="https://instagram.com/sinnerviooficial" target="_blank" rel="noopener">
+    <a class="btn" href="https://instagram.com/sinnerviooficial" target="_blank">
       Reservar turno por Instagram
     </a>
-
-    <div class="hero-sub">
-      Atención personalizada por <strong>Víctor y Day</strong> · Estilo clásico y moderno · Prolijidad y detalle
-    </div>
   </header>
 
   <!-- SERVICES -->
   <section>
     <h2>Servicios</h2>
-    <div class="guarda guarda--thin guarda--center section-guard"></div>
-
     <div class="services">
       <div class="service"><span>✂️</span>Corte masculino</div>
       <div class="service"><span>💇‍♀️</span>Corte femenino</div>
@@ -268,19 +210,15 @@
   <!-- ABOUT -->
   <section>
     <h2>Atención Personalizada</h2>
-    <div class="guarda guarda--thin guarda--center section-guard"></div>
-
     <div class="about">
-      Atención personalizada por <strong>Víctor y Day</strong>.<br>
-      Trabajamos con dedicación y estilo para que te vayas prolijo, cómodo y <strong>sin nervio</strong>.
+      Atención personalizada por <strong>Víctor y Day</strong>.  
+      Trabajamos con dedicación, estilo y detalle para que te vayas prolijo, cómodo y sin nervio.
     </div>
   </section>
 
   <!-- GALLERY -->
   <section>
     <h2>Trabajos</h2>
-    <div class="guarda guarda--thin guarda--center section-guard"></div>
-
     <div class="gallery">
       <div>Foto 1</div>
       <div>Foto 2</div>
@@ -294,27 +232,20 @@
   <!-- LOCATION -->
   <section>
     <h2>Ubicación & Horarios</h2>
-    <div class="guarda guarda--thin guarda--center section-guard"></div>
-
     <div class="location">
-      📍 <strong>San Rafael 320 – Ezeiza</strong><br>
-      🕘 <strong>Horario:</strong> 09:00 a 18:00 hs<br>
-      📸 <strong>Instagram:</strong> @sinnerviooficial
-      <div class="guarda guarda--thin guarda--center" style="margin-top:18px;"></div>
-      <a class="btn" href="https://instagram.com/sinnerviooficial" target="_blank" rel="noopener" style="margin-top:10px;">
-        Escribir por Instagram
-      </a>
+      📍 San Rafael 320 – Ezeiza <br>
+      🕘 Horario: 09:00 a 18:00 hs <br>
+      📸 Instagram: @sinnerviooficial
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="guarda guarda--thin guarda--center" style="margin: 0 auto 14px auto;"></div>
     © 2025 SIN NERVIO · Barbería & Peluquería · Ezeiza
   </footer>
 
   <!-- FLOATING INSTAGRAM -->
-  <a class="ig-float" href="https://instagram.com/sinnerviooficial" target="_blank" rel="noopener">
+  <a class="ig-float" href="https://instagram.com/sinnerviooficial" target="_blank">
     📸 Instagram
   </a>
 
