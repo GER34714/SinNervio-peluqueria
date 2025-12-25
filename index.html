@@ -20,11 +20,19 @@
       box-sizing: border-box;
     }
 
+    /* BACKGROUND GLOBAL (imagen + overlay oscuro para legibilidad) */
     body {
       font-family: 'Poppins', sans-serif;
-      background: #0b0b0b;
       color: #fff;
       line-height: 1.6;
+
+      background-image:
+        linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)),
+        url("https://iili.io/fMcBBNp.th.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
     }
 
     a {
@@ -41,12 +49,15 @@
       align-items: center;
       text-align: center;
       padding: 40px 20px;
-      background: radial-gradient(circle at top, #1a1a1a, #000);
+
+      /* dejamos el hero transparente para que se vea el background */
+      background: transparent;
     }
 
     header img {
       max-width: 280px;
       margin-bottom: 30px;
+      filter: drop-shadow(0 0 22px rgba(0,0,0,0.6));
     }
 
     header h1 {
@@ -54,12 +65,14 @@
       font-size: 3rem;
       letter-spacing: 2px;
       margin-bottom: 10px;
+      text-shadow: 0 0 20px rgba(0,0,0,0.6);
     }
 
     header p {
       font-size: 1.1rem;
       color: #ddd;
       margin-bottom: 30px;
+      text-shadow: 0 0 20px rgba(0,0,0,0.6);
     }
 
     .btn {
@@ -92,6 +105,7 @@
       margin-bottom: 40px;
       color: #f5c16c;
       letter-spacing: 1px;
+      text-shadow: 0 0 18px rgba(0,0,0,0.55);
     }
 
     /* SERVICES */
@@ -102,11 +116,13 @@
     }
 
     .service {
-      background: #141414;
+      background: rgba(20, 20, 20, 0.85);
+      backdrop-filter: blur(4px);
       padding: 30px 20px;
       border-radius: 15px;
       text-align: center;
       box-shadow: 0 0 15px rgba(0,0,0,0.6);
+      border: 1px solid rgba(245,193,108,0.12);
     }
 
     .service span {
@@ -120,8 +136,15 @@
       text-align: center;
       max-width: 800px;
       margin: auto;
-      color: #ccc;
+      color: #e1e1e1;
       font-size: 1.05rem;
+
+      background: rgba(20, 20, 20, 0.78);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(245,193,108,0.12);
+      padding: 26px 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
     }
 
     /* GALLERY */
@@ -132,30 +155,41 @@
     }
 
     .gallery div {
-      background: #222;
+      background: rgba(34, 34, 34, 0.82);
+      backdrop-filter: blur(4px);
       height: 180px;
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #777;
+      color: #bdbdbd;
       font-size: 0.9rem;
+      border: 1px dashed rgba(245,193,108,0.18);
     }
 
     /* LOCATION */
     .location {
       text-align: center;
-      color: #ddd;
+      color: #e1e1e1;
       font-size: 1.05rem;
+
+      background: rgba(20, 20, 20, 0.78);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(245,193,108,0.12);
+      padding: 26px 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
     }
 
     /* FOOTER */
     footer {
-      background: #000;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(4px);
       padding: 30px 20px;
       text-align: center;
       font-size: 0.9rem;
-      color: #777;
+      color: #9a9a9a;
+      border-top: 1px solid rgba(245,193,108,0.12);
     }
 
     /* FLOATING IG BUTTON */
@@ -180,6 +214,9 @@
       header img {
         max-width: 220px;
       }
+      body {
+        background-attachment: scroll; /* mejor performance en móviles */
+      }
     }
   </style>
 </head>
@@ -190,7 +227,7 @@
     <img src="https://iili.io/fMa56hb.md.png" alt="SIN NERVIO Logo">
     <h1>SIN NERVIO</h1>
     <p>Barbería & Peluquería · Damas y Caballeros</p>
-    <a class="btn" href="https://instagram.com/sinnerviooficial" target="_blank">
+    <a class="btn" href="https://instagram.com/sinnerviooficial" target="_blank" rel="noopener">
       Reservar turno por Instagram
     </a>
   </header>
@@ -245,7 +282,7 @@
   </footer>
 
   <!-- FLOATING INSTAGRAM -->
-  <a class="ig-float" href="https://instagram.com/sinnerviooficial" target="_blank">
+  <a class="ig-float" href="https://instagram.com/sinnerviooficial" target="_blank" rel="noopener">
     📸 Instagram
   </a>
 
